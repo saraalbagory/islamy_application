@@ -34,37 +34,39 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Islamy"),
-          centerTitle: true,
-          // titleTextStyle: const TextStyle(
-          //   fontWeight: FontWeight.w700,
-          //   color: Color.fromARGB(255, 0, 0, 0),
-          //   fontSize: 26,
-          // ),
+          
         ),
         body: bottonNavPages[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           iconSize: 12,
-          selectedItemColor: Colors.black,
-          selectedIconTheme: IconThemeData(
-            fill:1,
-            color: Colors.black,
-          ),
+          // selectedItemColor: Colors.black,
+          // selectedIconTheme: IconThemeData(
+          //   fill:1,
+          //   color: Colors.black,
+          // ),
           currentIndex:_currentIndex,
-          backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
+          // backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
           items: [
           BottomNavigationBarItem(
               icon: Image.asset("assets/images/icon_quran.png",),
               label: "Quran",
-              backgroundColor: Color.fromRGBO( 183, 147, 95, 1),),
+            //  backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
+            ),
           BottomNavigationBarItem(
               icon: Image.asset("assets/images/icon_hadeth.png"),
-              label: "Hadeth",backgroundColor: Color.fromRGBO( 183, 147, 95, 1),),
+              label: "Hadeth",
+              //backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
+              ),
           BottomNavigationBarItem(
               icon: Image.asset("assets/images/icon_radio.png"),
-              label: "Radio",backgroundColor: Color.fromRGBO( 183, 147, 95, 1),),
+              label: "Radio",
+             // backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
+              ),
           BottomNavigationBarItem(
               icon: Image.asset("assets/images/icon_sebha.png"),
-              label: "Sebha",backgroundColor: Color.fromRGBO( 183, 147, 95, 1),)
+              label: "Sebha",
+              //backgroundColor: Color.fromRGBO( 183, 147, 95, 1)
+              )
         ],
         onTap: (index)
         {
