@@ -16,6 +16,9 @@ class AppTheme {
         ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        selectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w700,
+        ),
         selectedItemColor: AppColors.black,
         unselectedItemColor: Colors.white,
         elevation: 20,
@@ -38,10 +41,15 @@ class AppTheme {
         ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          selectedItemColor: AppColors.gold,
-          unselectedItemColor: Colors.white,
-          elevation: 20,selectedIconTheme: IconThemeData(
+        selectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w700,
+        ),
+        selectedItemColor: AppColors.gold,
+        unselectedItemColor: Colors.white,
+        elevation: 20,
+        selectedIconTheme: IconThemeData(
           fill: 1,
           color: AppColors.gold,
-        ),));
+        ),
+      ));
 }

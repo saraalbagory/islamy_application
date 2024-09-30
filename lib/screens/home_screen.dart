@@ -14,10 +14,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex=0;
   List bottonNavPages=[
-    QuarnScreen(),
-    HadethScreen(),
-    RadioScreen(),
-    SebahScreen(),
+    const QuarnScreen(),
+    const HadethScreen(),
+    const RadioScreen(),
+    const SebahScreen(),
   ];
   @override
   @override
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: bottonNavPages[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
-          iconSize: 12,
+          iconSize: 30,
           // selectedItemColor: Colors.black,
           // selectedIconTheme: IconThemeData(
           //   fill:1,
@@ -46,24 +46,24 @@ class _HomeScreenState extends State<HomeScreen> {
           // ),
           currentIndex:_currentIndex,
           // backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
-          items: [
+          items: const [
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/icon_quran.png",),
+              icon: ImageIcon(AssetImage("assets/images/icon_quran.png")),
               label: "Quran",
             //  backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
             ),
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/icon_hadeth.png"),
+              icon:ImageIcon(AssetImage("assets/images/icon_hadeth.png"),),
               label: "Hadeth",
               //backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
               ),
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/icon_radio.png"),
+              icon: ImageIcon(AssetImage("assets/images/icon_radio.png")),
               label: "Radio",
              // backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
               ),
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/icon_sebha.png"),
+              icon:ImageIcon(AssetImage("assets/images/icon_sebha.png")),
               label: "Sebha",
               //backgroundColor: Color.fromRGBO( 183, 147, 95, 1)
               )
