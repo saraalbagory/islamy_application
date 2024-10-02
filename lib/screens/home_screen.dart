@@ -39,13 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
         body: bottonNavPages[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           iconSize: 30,
-          // selectedItemColor: Colors.black,
-          // selectedIconTheme: IconThemeData(
-          //   fill:1,
-          //   color: Colors.black,
-          // ),
+          
           currentIndex:_currentIndex,
-          // backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
+         
           items: const [
           BottomNavigationBarItem(
               icon: ImageIcon(AssetImage("assets/images/icon_quran.png")),
