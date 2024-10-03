@@ -6,6 +6,7 @@ import 'package:islamy_application/pages/sebah_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+  static const String  routeName="HomeScreen";
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -14,10 +15,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex=0;
   List bottonNavPages=[
-    QuarnScreen(),
-    HadethScreen(),
-    RadioScreen(),
-    SebahScreen(),
+    const QuarnScreen(),
+    const HadethScreen(),
+    const RadioScreen(),
+    const SebahScreen(),
   ];
   @override
   @override
@@ -34,37 +35,35 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Islamy"),
-          centerTitle: true,
-          // titleTextStyle: const TextStyle(
-          //   fontWeight: FontWeight.w700,
-          //   color: Color.fromARGB(255, 0, 0, 0),
-          //   fontSize: 26,
-          // ),
+          
         ),
         body: bottonNavPages[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
-          iconSize: 12,
-          selectedItemColor: Colors.black,
-          selectedIconTheme: IconThemeData(
-            fill:1,
-            color: Colors.black,
-          ),
+          iconSize: 30,
+          
           currentIndex:_currentIndex,
-          backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
-          items: [
+         
+          items: const [
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/icon_quran.png",),
+              icon: ImageIcon(AssetImage("assets/images/icon_quran.png")),
               label: "Quran",
-              backgroundColor: Color.fromRGBO( 183, 147, 95, 1),),
+            //  backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
+            ),
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/icon_hadeth.png"),
-              label: "Hadeth",backgroundColor: Color.fromRGBO( 183, 147, 95, 1),),
+              icon:ImageIcon(AssetImage("assets/images/icon_hadeth.png"),),
+              label: "Hadeth",
+              //backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
+              ),
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/icon_radio.png"),
-              label: "Radio",backgroundColor: Color.fromRGBO( 183, 147, 95, 1),),
+              icon: ImageIcon(AssetImage("assets/images/icon_radio.png")),
+              label: "Radio",
+             // backgroundColor: Color.fromRGBO( 183, 147, 95, 1),
+              ),
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/icon_sebha.png"),
-              label: "Sebha",backgroundColor: Color.fromRGBO( 183, 147, 95, 1),)
+              icon:ImageIcon(AssetImage("assets/images/icon_sebha.png")),
+              label: "Sebha",
+              //backgroundColor: Color.fromRGBO( 183, 147, 95, 1)
+              )
         ],
         onTap: (index)
         {
