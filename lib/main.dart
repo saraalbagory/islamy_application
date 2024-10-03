@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_application/common/app_theme.dart';
 import 'package:islamy_application/screens/home_screen.dart';
+import 'package:islamy_application/screens/quraan_virses_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +16,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme.lightTheme,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       darkTheme: AppTheme.darkTheme,
-      home: const HomeScreen(),
+      routes: {
+        HomeScreen.routeName:(_)=>const HomeScreen(),
+        QuraanVirsesScreen.routeName:(_)=>const QuraanVirsesScreen()
+      },
+      initialRoute: HomeScreen.routeName,
       debugShowCheckedModeBanner: false,
     );
   }
