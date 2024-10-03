@@ -6,6 +6,7 @@ import 'package:islamy_application/pages/sebah_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+  static const String  routeName="HomeScreen";
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();

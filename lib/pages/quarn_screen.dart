@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_application/common/qurann_info.dart';
+import 'package:islamy_application/models/quraan_model.dart';
+import 'package:islamy_application/screens/quraan_virses_screen.dart';
 
 class QuarnScreen extends StatelessWidget {
   const QuarnScreen({super.key});
@@ -59,11 +61,17 @@ class QuarnScreen extends StatelessWidget {
                           //  mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(QurannInfo.quranSurasEn[index]),
-                            Text(QurannInfo.suraVersesCount[index].toString()),
+                            Text('${QurannInfo.suraVersesCount[index].toString()} verses'),
                           ],
                         ),
                         trailing: IconButton.filled(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, QuraanVirsesScreen.routeName,
+                                arguments: QuraanModel(
+                                    fileIndex: index + 1,
+                                    suraName: QurannInfo.arSuras[index]));
+                          },
                           icon: const Icon(
                             Icons.play_arrow_rounded,
                           ),
