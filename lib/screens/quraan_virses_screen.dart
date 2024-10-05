@@ -58,7 +58,7 @@ class QuraanVirsesScreen extends StatelessWidget {
                     return ListView.builder(
                       itemBuilder: (context, index) {
                         return Text(
-                          verses[index],
+                          '${verses[index]}\u06DD',
                           style: const TextStyle(
                             fontSize: 12,
                             color: Colors.black
