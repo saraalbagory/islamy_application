@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_application/common/qurann_info.dart';
 import 'package:islamy_application/models/quraan_model.dart';
-import 'package:islamy_application/screens/quraan_virses_screen.dart';
+import 'package:islamy_application/screens/quraan_verses_screen.dart';
 
 class QuarnScreen extends StatelessWidget {
   const QuarnScreen({super.key});
