@@ -3,6 +3,20 @@ import 'package:islamy_application/common/app_colors.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
+      iconTheme: IconThemeData(
+        color: AppColors.mainLightColor,
+        fill: 1,
+      ),
+       colorScheme: ColorScheme(
+          brightness: Brightness.light,
+          primary:AppColors.mainLightColor ,
+          onPrimary: AppColors.mainLightColor,
+          secondary:AppColors.mainLightColor,
+          onSecondary: AppColors.black,
+          error:Colors.red,
+          onError: Colors.red,
+          surface: Colors.white,
+          onSurface:Colors.black),
       primaryColor: AppColors.mainLightColor,
       canvasColor: AppColors.mainLightColor,
       scaffoldBackgroundColor: Colors.transparent,
@@ -28,6 +42,17 @@ class AppTheme {
         ),
       ));
   static ThemeData darkTheme = ThemeData(
+      iconTheme: IconThemeData(color: AppColors.gold),
+      colorScheme: ColorScheme(
+          brightness: Brightness.dark,
+          primary:AppColors.mainDarkColor ,
+          onPrimary: AppColors.mainDarkColor,
+          secondary: AppColors.gold,
+          onSecondary: Colors.white,
+          error:Colors.red,
+          onError: Colors.red,
+          surface: AppColors.mainDarkColor,
+          onSurface:Colors.white),
       primaryColor: AppColors.mainDarkColor,
       canvasColor: AppColors.mainDarkColor,
       scaffoldBackgroundColor: Colors.transparent,

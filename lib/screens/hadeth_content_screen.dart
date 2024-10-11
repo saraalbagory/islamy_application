@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:islamy_application/common/images_names.dart';
+
 import 'package:islamy_application/models/hadeth_model.dart';
+import 'package:islamy_application/providers/theme_provider.dart';
+import 'package:islamy_application/settings_side_bar.dart';
+import 'package:provider/provider.dart';
 
 class HadethContentScreen extends StatelessWidget {
   const HadethContentScreen({super.key});
@@ -10,12 +15,15 @@ class HadethContentScreen extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments as HadeethModel;
     //List<String> verses = quraanModel.loadSuraContent() as List<String>;
     return Container(
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("assets/images/default_bg.png"),
+            image: AssetImage(Provider.of<ThemeProvider>(context).isDark
+              ? ImagesNames.darkbg
+              : ImagesNames.lightbg),
             fit: BoxFit.cover),
       ),
       child: Scaffold(
+        drawer: SettingsSideBar(),
         appBar: AppBar(
           title: const Text("Islamy"),
         ),
@@ -25,8 +33,8 @@ class HadethContentScreen extends StatelessWidget {
               vertical: MediaQuery.of(context).size.height * 0.065,
               horizontal: MediaQuery.of(context).size.width * 0.15),
           padding: const EdgeInsets.all(15),
-          decoration: const BoxDecoration(
-              color: Color.fromARGB(136, 255, 255, 255),
+          decoration:  BoxDecoration(
+              color:Theme.of(context).colorScheme.surface.withOpacity(0.4),
               borderRadius: BorderRadius.all(Radius.circular(25))),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,7 +43,7 @@ class HadethContentScreen extends StatelessWidget {
               Divider(
                 height: 20,
                 thickness: 3,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.secondary,
               ),
                 Expanded(
                 child:SingleChildScrollView(
