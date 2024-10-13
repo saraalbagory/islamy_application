@@ -14,13 +14,16 @@ class _HadethScreenState extends State<HadethScreen> {
   List<HadeethModel> ahadeth = [];
 
   @override
-  void initState() {
-    super.initState();
-    loadAhadeth();
-  }
+  // void initState() {
+  //   super.initState();
+  //   loadAhadeth();
+  // }
 
   @override
   Widget build(BuildContext context) {
+    if (ahadeth.isEmpty) {
+      loadAhadeth();
+    }
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Column(
@@ -43,7 +46,7 @@ class _HadethScreenState extends State<HadethScreen> {
                     ),
                     itemBuilder: (context, index) {
                       return PhysicalModel(
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.surface,
                         borderRadius: BorderRadius.circular(20.0),
                         elevation: 8,
                         shadowColor: const Color.fromARGB(133, 147, 96, 1),
@@ -53,14 +56,14 @@ class _HadethScreenState extends State<HadethScreen> {
                             children: [
                               Image.asset(
                                 "assets/images/Vector.png",
-                                color: Theme.of(context).primaryColor,
+                                color: Theme.of(context).colorScheme.secondary,
                                 height: 35,
                                 width: 40,
                               ),
                               Text(
                                 (index + 1).toString(),
                                 style: TextStyle(
-                                    color: Theme.of(context).primaryColor,
+                                    color: Theme.of(context).colorScheme.secondary,
                                     fontWeight: FontWeight.w700),
                               )
                             ],
@@ -78,7 +81,7 @@ class _HadethScreenState extends State<HadethScreen> {
                             color: Colors.white,
                             style: ButtonStyle(
                               backgroundColor: WidgetStatePropertyAll(
-                                  Theme.of(context).primaryColor),
+                                 Theme.of(context).colorScheme.secondary),
                             ),
                           ),
                           titleAlignment: ListTileTitleAlignment.center,
@@ -108,6 +111,9 @@ class _HadethScreenState extends State<HadethScreen> {
       _ahadeth.add(HadeethModel(name: name, content: content));
     }
     ahadeth = _ahadeth;
-    // setState(() {});
+    setState(() {
+      
+    });
+   
   }
 }
