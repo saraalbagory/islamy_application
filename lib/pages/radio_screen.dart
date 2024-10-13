@@ -20,7 +20,7 @@ class RadioScreen extends StatelessWidget {
              Text(AppLocalizations.of(context)!.podcast,style: const TextStyle(
               fontWeight: FontWeight.w600
              ),
-             ,),
+             ),
 
             Directionality(
               textDirection: TextDirection.ltr,
