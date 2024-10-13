@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 
 class ThemeProvider with ChangeNotifier {
   ThemeMode appThemeMode = ThemeMode.light;
-  changeThemeMode(ThemeMode mode) {
+  String language="ar";
+  void changeLanguage(String value)
+  {
+     language=value;
+     notifyListeners();
+  }
+  void changeThemeMode(ThemeMode mode) {
     appThemeMode = mode;
     notifyListeners();
   }

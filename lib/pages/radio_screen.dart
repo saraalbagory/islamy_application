@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class RadioScreen extends StatelessWidget {
   const RadioScreen({super.key});
 
@@ -17,33 +17,42 @@ class RadioScreen extends StatelessWidget {
             //   SizedBox(
             //   height: MediaQuery.of(context).size.height*0.15,
             // ),
-            const Text("إذاعة القرآن الكريم"),
+             Text(AppLocalizations.of(context)!.podcast,style: const TextStyle(
+              fontWeight: FontWeight.w600
+             ),
+             ,),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.skip_previous_rounded,
-                      color: Theme.of(context).colorScheme.secondary,
-                      size: 40,
-                    )),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.play_arrow_rounded,
-                      color: Theme.of(context).colorScheme.secondary,
-                      size: 45,
-                    )),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.skip_next,
-                      color: Theme.of(context).colorScheme.secondary,
-                      size: 40,
-                    )),
-              ],
+            Directionality(
+              textDirection: TextDirection.ltr,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        //textDirection: TextDirection.ltr,
+                        Icons.skip_previous_rounded,
+                        color: Theme.of(context).colorScheme.secondary,
+                        size: 40,
+                      )),
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.play_arrow_rounded,
+                        color: Theme.of(context).colorScheme.secondary,
+                        size: 45,
+                      )),
+                  IconButton(
+                      
+                      onPressed: () {},
+                      icon: Icon(
+                        
+                        Icons.skip_next_rounded,
+                        color: Theme.of(context).colorScheme.secondary,
+                        size: 40,
+                      )),
+                ],
+              ),
             )
           ],
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:islamy_application/providers/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -47,17 +48,20 @@ class _SettingsSideBarState extends State<SettingsSideBar> {
             },
             //   inactiveTrackColor:Theme.of(context).primaryColor,,
             title: Row(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Icon(
                   provider.isDark ? Icons.dark_mode : Icons.light_mode,
                   color: Theme.of(context).iconTheme.color,
                 ),
-                const SizedBox(width: 15),
-                Text(
-                  provider.isDark ? "Dark Mode" : "Light Mode",
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w500, fontSize: 14),
+              
+                Expanded(
+                  child: Text(
+                    provider.isDark ? "Dark Mode" : "Light Mode",
+                    softWrap: true,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w500, fontSize: 14),
+                  ),
                 ),
               ],
             ),
@@ -74,25 +78,30 @@ class _SettingsSideBarState extends State<SettingsSideBar> {
               decoration: BoxDecoration(
                   color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(15)),
-              child: DropdownButton(
+              child: DropdownButton<String>(
                 borderRadius: BorderRadius.circular(15),
                 iconEnabledColor:Provider.of<ThemeProvider>(context).isDark? Theme.of(context).colorScheme.secondary: Theme.of(context).colorScheme.surface,
-                value: "en",
+                value: provider.language,
                 items: const [
                   DropdownMenuItem(
+                    value: "en",
+                
                     child: Text(
                       "English",
                       style: TextStyle(color: Colors.white),
                     ),
-                    value: "en",
                   ),
                   DropdownMenuItem(
+                    value: "ar",
                     child:
-                        Text("Arabic", style: TextStyle(color: Colors.white)),
-                    value: "Ar",
+                        Text("عربى", style: TextStyle(color: Colors.white)),
                   )
                 ],
-                onChanged: (value) {},
+                onChanged: (value) {
+                  if(value!=null) {
+                    provider.changeLanguage(value);
+                  }
+                },
                 dropdownColor: Theme.of(context).primaryColor.withOpacity(0.4),
               ),
             ),
