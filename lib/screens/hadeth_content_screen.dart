@@ -35,7 +35,7 @@ class HadethContentScreen extends StatelessWidget {
           padding: const EdgeInsets.all(15),
           decoration:  BoxDecoration(
               color:Theme.of(context).colorScheme.surface.withOpacity(0.4),
-              borderRadius: BorderRadius.all(Radius.circular(25))),
+              borderRadius: const BorderRadius.all(Radius.circular(25))),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

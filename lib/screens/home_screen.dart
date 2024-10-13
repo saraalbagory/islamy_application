@@ -7,7 +7,7 @@ import 'package:islamy_application/pages/sebah_screen.dart';
 import 'package:islamy_application/providers/theme_provider.dart';
 import 'package:islamy_application/settings_side_bar.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
   static const String routeName = "HomeScreen";
@@ -41,30 +41,32 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         drawer: const SettingsSideBar(),
         appBar: AppBar(
-          title: const Text("Islamy"),
-        ),
+          title: Text(AppLocalizations.of(context)?.islamy ?? 'Islamy'),
+         //title: Text(AppLocalizations.of(context)!.islamy ),
+),
+        
         body: bottonNavPages[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           iconSize: 30,
           currentIndex: _currentIndex,
-          items: const [
+          items:  [
             BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage("assets/images/icon_quran.png")),
-              label: "Quran",
+              icon: const ImageIcon(AssetImage("assets/images/icon_quran.png")),
+              label:  AppLocalizations.of(context)?.quraan ?? "Quran",
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(
+              icon: const ImageIcon(
                 AssetImage("assets/images/icon_hadeth.png"),
               ),
-              label: "Hadeth",
+              label: AppLocalizations.of(context)?.hadeth ??"Hadeth",
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage("assets/images/icon_radio.png")),
-              label: "Radio",
+              icon: const ImageIcon(AssetImage("assets/images/icon_radio.png")),
+              label: AppLocalizations.of(context)?.radio??"Radio",
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage("assets/images/icon_sebha.png")),
-              label: "Sebha",
+              icon: const ImageIcon(AssetImage("assets/images/icon_sebha.png")),
+              label: AppLocalizations.of(context)?.sebah??"Sebha",
             )
           ],
           onTap: (index) {
